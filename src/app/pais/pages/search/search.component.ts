@@ -13,8 +13,9 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
   query: string="";
-  buscarPais(query:string){
+  buscarPais(){
     console.log(this.query);
     this.paisService.busquedaPais(this.query)
+    this.query="";
   }
 }
