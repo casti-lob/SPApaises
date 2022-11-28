@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   }
   query: string="";
   buscarPais(){
-    console.log(this.query);
+    
     this.paisService.busquedaPais(this.query)
     this.query="";
   }

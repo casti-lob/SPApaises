@@ -14,13 +14,12 @@ export class PaisesService {
 
   ]
 
-  private url:string = "https://restcountries.com/v3.1/name"
+  private url:string = "https://restcountries.com/v3.1/name/"
 
   busquedaPais(query:string){
-    const params = new HttpParams()
-    .set("", query);
+    
     localStorage.setItem('result', JSON.stringify(this.results))
-    this.http.get<Country>(this.url,{params})
-    .subscribe((resp)=>this.results)
+    this.http.get<Country[]>(`${this.url}${query}`)
+    .subscribe((resp)=>this.results=resp)
   }
 }

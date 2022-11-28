@@ -1,6 +1,8 @@
 <h3>Por País</h3>
 <app-search></app-search>
-
+<div class="alert alert-danger">
+    No se encontró nada con el término _______
+</div>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -15,9 +17,9 @@
         <tr *ngFor="let country of searchCountry; let i = index;"> <!-- Esto es lo que tenemos que repetir por cada país que encuentre -->
             <td>{{i}}</td>
             <td>
-                <img class="small-flag" [src]="country.flag">
+                <img class="small-flag" [src]="country.flags.png">
             </td>
-            <td> {{country.capital}}, {{country.name}}</td> <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
+            <td> {{country.capital}}, {{country.name.official}}</td> <!-- La capital, el nombre del país y la población lo obtendremos de la api -->
             <td> {{country.population}}</td>
             <td>
                 <a >Ver...</a> <!-- Esto lo dejamos así de momento -->

@@ -14,7 +14,7 @@ export class PorPaisComponent implements OnInit {
   }
 
   get searchCountry():Country[]{
-    console.log(this.paisService.results)
+    
     return this.paisService.results
   }
 }
