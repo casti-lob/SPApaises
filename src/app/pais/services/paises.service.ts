@@ -8,7 +8,7 @@ import { Country } from '../interfaces/searchCountry.interface';
 export class PaisesService {
 
   constructor( private http: HttpClient) { 
-    this.results = JSON.parse(localStorage.getItem("paises")!)|| [];
+    
   }
   public results:Country[]=[
 
@@ -18,8 +18,15 @@ export class PaisesService {
 
   busquedaPais(query:string){
     
-    localStorage.setItem('result', JSON.stringify(this.results))
+    
     this.http.get<Country[]>(`${this.url}${query}`)
-    .subscribe((resp)=>this.results=resp)
+    .subscribe({
+      next: (resp)=>{
+        this.results=resp;
+      },
+      error: (err)=>{
+        
+      }
+    })
   }
 }

@@ -13,8 +13,10 @@ export class PorPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get searchCountry():Country[]{
+  query: string="";
+  buscarPais(){
     
-    return this.paisService.results
+    this.paisService.busquedaPais(this.query)
+    this.query="";
   }
 }
