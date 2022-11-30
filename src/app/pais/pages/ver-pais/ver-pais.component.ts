@@ -8,22 +8,17 @@ import { PaisesService } from '../../services/paises.service';
   templateUrl: './ver-pais.component.html'
 })
 export class VerPaisComponent implements OnInit {
-  code:string=''
-  pais:any;
+  code:string='';
+  pais!:Country;
 
-  constructor(private route: ActivatedRoute, private paisService:PaisesService, private activeRoute:ActivatedRoute) {
-    console.log(route.snapshot.params['id']);
-    
-   }
-   
+  constructor(private paisService:PaisesService, private activeRoute:ActivatedRoute) { }
+
   ngOnInit(): void {
     this.code=this.activeRoute.snapshot.params['id'];
     this.paisService.country(this.code)
     .subscribe({
-      next: (resp)=> {
-        this.pais=resp[0]
-      },
-      error: (error)=> console.log(error)
+      next: (resp) => {this.pais=resp[0]},
+      error: (error) => console.log(error)
     })
   }
  
