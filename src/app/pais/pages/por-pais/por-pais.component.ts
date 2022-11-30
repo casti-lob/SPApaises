@@ -12,11 +12,28 @@ export class PorPaisComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  query: string="";
-  buscarPais(){
+  //get searchCountry():Country[]{
     
+   //return this.paisService;
+// }
+  error:boolean=false;
+  textError:string="";
+  query: string="";
+  result:Country[]=[];
+  
+  buscarPais(){
+    this.textError=this.query;
     this.paisService.busquedaPais(this.query)
+    .subscribe({
+      next:(resp)=> {
+        this.result= resp
+        this.error=false;
+      },
+      error: (error)=> {
+        this.error=true
+        this.result=[]
+      }
+    })
     this.query="";
   }
 }
