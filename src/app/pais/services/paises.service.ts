@@ -31,6 +31,7 @@ export class PaisesService {
     .subscribe({
       next: (resp)=>{
         this.results=resp;
+        this._error=false;
       },
       error: (err)=>{
         this._error=true;
