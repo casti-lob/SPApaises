@@ -5,27 +5,4 @@
     No se encontró nada con el término {{textError}}
 </div>
 
-<table class="table table-hover" >
-    <thead>
-        <tr>
-            <th> # </th>
-            <th> Bandera </th>
-            <th> Nombre </th>
-            <th> Población </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let country of result; let i = index;"> 
-            <td>{{i}}</td>
-            <td>
-                <img class="small-flag" [src]="country.flags.png">
-            </td>
-            <td> {{country.capital}}, {{country.name.official}}</td> 
-            <td> {{country.population}}</td>
-            <td>
-                <a [routerLink]="['pais/',country.ccn3]">Ver...</a> 
-            </td>
-        </tr>
-    </tbody>
-</table>
+<app-table [result]="result"></app-table>

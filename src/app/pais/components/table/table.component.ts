@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/searchCountry.interface';
 
 @Component({
   selector: 'app-table',
@@ -10,5 +11,5 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  @Input()  result:Country[]=[]
 }

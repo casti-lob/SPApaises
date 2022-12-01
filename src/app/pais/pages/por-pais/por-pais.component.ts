@@ -18,12 +18,12 @@ export class PorPaisComponent implements OnInit {
 // }
   error:boolean=false;
   textError:string="";
-  query: string="";
+  
   result:Country[]=[];
   
-  buscarPais(){
-    this.textError=this.query;
-    this.paisService.busquedaPais(this.query)
+  buscarPais(query:string){
+    this.textError=query;
+    this.paisService.busquedaPais(query)
     .subscribe({
       next:(resp)=> {
         this.result= resp
@@ -34,6 +34,6 @@ export class PorPaisComponent implements OnInit {
         this.result=[]
       }
     })
-    this.query="";
+    query="";
   }
 }
