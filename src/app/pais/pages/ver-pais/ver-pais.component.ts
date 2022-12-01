@@ -17,7 +17,10 @@ export class VerPaisComponent implements OnInit {
     this.code=this.activeRoute.snapshot.params['id'];
     this.paisService.country(this.code)
     .subscribe({
-      next: (resp) => {this.pais=resp[0]},
+      next: (resp) => {
+        this.pais=resp[0]
+        console.log(this.pais)
+      },
       error: (error) => console.log(error)
     })
   }

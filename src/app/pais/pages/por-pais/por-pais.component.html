@@ -31,7 +31,7 @@
             <td> {{country.capital}}, {{country.name.official}}</td> 
             <td> {{country.population}}</td>
             <td>
-                <a >Ver...</a> 
+                <a [routerLink]="['pais/',country.ccn3]">Ver...</a> 
             </td>
         </tr>
     </tbody>

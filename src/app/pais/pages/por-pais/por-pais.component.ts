@@ -8,7 +8,7 @@ import { PaisesService } from '../../services/paises.service';
 })
 export class PorPaisComponent implements OnInit {
 
-  constructor( private paisService:PaisesService) { }
+  constructor( private paisService:PaisesService ) { }
 
   ngOnInit(): void {
   }
