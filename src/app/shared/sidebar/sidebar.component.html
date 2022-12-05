@@ -1,11 +1,18 @@
 <div>
-
     <h3>Búsqueda</h3>
-
-
-    <div class="list-group list-reset">
-        <a [routerLink]="['país']">Buscar país</a>
-        <a [routerLink]="['region']" >Por region</a>
-        <a [routerLink]="['capital']">Por capital</a>
-    </div>
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item" [routerLink]="['/']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        >
+            Buscar país
+        </li>
+        <li class="list-group-item" [routerLink]="['/region']" routerLinkActive="active">
+            Por region
+        </li>
+        <li class="list-group-item" [routerLink]="['/capital']" routerLinkActive="active">
+            Por capital
+        </li>
+    </ul>
+    
 </div>

@@ -8,8 +8,10 @@ import { Country } from '../../interfaces/searchCountry.interface';
 export class TableComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
+
+  
   @Input()  result:Country[]=[]
 }
